@@ -1,28 +1,28 @@
 
 #pragma once
 #include <iostream>
-	// Класс Дробь
+	// РљР»Р°СЃСЃ Р”СЂРѕР±СЊ
 	class Fraction
 	{
 	private:
-		// Числитель
+		// Р§РёСЃР»РёС‚РµР»СЊ
 		long _numerator;
-		// Знаменатель
+		// Р—РЅР°РјРµРЅР°С‚РµР»СЊ
 		long _denomenator;
-		// Наибольший общий делитель !!!!
+		// РќР°РёР±РѕР»СЊС€РёР№ РѕР±С‰РёР№ РґРµР»РёС‚РµР»СЊ !!!!
 		int NOD(int x, int y)
 		{
 			if (y == 0) return x;
 			return NOD(y, x % y);
 		}
 	public:
-		// конструктор : создание объекта Дробь
+		// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ : СЃРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° Р”СЂРѕР±СЊ
 		Fraction(long numerator, long denomenator)
 		{
 			Fraction::_numerator = numerator;
 			Fraction::_denomenator = denomenator;
 		}
-		// Вычисление 
+		// Р’С‹С‡РёСЃР»РµРЅРёРµ 
 		void mult(int x)
 		{
 			_numerator *= x;
@@ -42,14 +42,14 @@
 		}
 		void show()
 		{
-			std::cout << "\tТекущая дробь:  " << _numerator << '/' << _denomenator << std::endl;
+			std::cout << "\tРўРµРєСѓС‰Р°СЏ РґСЂРѕР±СЊ:  " << _numerator << '/' << _denomenator << std::endl;
 		}
 
 		int peredacha()
 		{
 			return NOD(_numerator, _denomenator);
 		}
-		// Сокращение дроби
+		// РЎРѕРєСЂР°С‰РµРЅРёРµ РґСЂРѕР±Рё
 		void reduction(int x)
 		{
 			_numerator /= x;
